@@ -48,7 +48,10 @@ public class Primitives {
 		primTable["+"]				= function(b:*):* { return interp.numarg(b, 0) + interp.numarg(b, 1) };
 		primTable["-"]				= function(b:*):* { return interp.numarg(b, 0) - interp.numarg(b, 1) };
 		primTable["*"]				= function(b:*):* { return interp.numarg(b, 0) * interp.numarg(b, 1) };
+<<<<<<< HEAD
 		primTable["^"]				= function(b:*):* { return Math.pow(interp.numarg(b, 0), interp.numarg(b, 1)) };
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		primTable["/"]				= function(b:*):* { return interp.numarg(b, 0) / interp.numarg(b, 1) };
 		primTable["randomFrom:to:"]	= primRandom;
 		primTable["<"]				= function(b:*):* { return compare(interp.arg(b, 0), interp.arg(b, 1)) < 0 };
@@ -73,9 +76,12 @@ public class Primitives {
 		primTable["deleteClone"]		= primDeleteClone;
 		primTable["whenCloned"]			= interp.primNoop;
 
+<<<<<<< HEAD
 		primTable["true"]			= function(b:*):* { return true };
 		primTable["false"]			= function(b:*):* { return false };
 
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		// testing (for development)
 		primTable["NOOP"]				= interp.primNoop;
 		primTable["COUNT"]				= function(b:*):* { return counter };

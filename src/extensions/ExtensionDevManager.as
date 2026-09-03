@@ -80,7 +80,11 @@ public class ExtensionDevManager extends ExtensionManager {
 		}
 
 		// TODO: button tip link
+<<<<<<< HEAD
 		var button:Button = new Button(Translator.map('Load Experimental Extension(WIP)'));
+=======
+		var button:Button = new Button(Translator.map('Load Experimental Extension'));
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		if (SCRATCH::allow3d) { // TODO: use a better flag or rename this one
 			// This event is only available in flash 11.2 and above.
 			button.addEventListener(MouseEvent.RIGHT_CLICK, showShiftMenu);
@@ -89,9 +93,14 @@ public class ExtensionDevManager extends ExtensionManager {
 			if (evt.shiftKey) {
 				showShiftMenu(evt);
 			} else {
+<<<<<<< HEAD
 				//Scratch.app.setModalOverlay(true);
 				//Scratch.app.externalCall('JSshowExtensionDialog');
 				showShiftMenu(evt);
+=======
+				Scratch.app.setModalOverlay(true);
+				Scratch.app.externalCall('JSshowExtensionDialog');
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 			}
 		});
 

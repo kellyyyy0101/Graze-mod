@@ -11,4 +11,7 @@
 .flexLibProperties
 .project
 local.properties
+<<<<<<< HEAD
 /jdk8/
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0

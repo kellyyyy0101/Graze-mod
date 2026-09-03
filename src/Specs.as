@@ -72,7 +72,10 @@ public class Specs {
 		[10, "More Blocks",	procedureColor],
 		[11, "Parameter",	parameterColor],
 		[12, "List",		listColor],
+<<<<<<< HEAD
 		[13, "Motion",		0x4a6cd4],
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		[20, "Extension",	extensionsColor],
 	];
 
@@ -223,7 +226,10 @@ public class Specs {
 		["when %m.key key pressed",				"h", 5, "whenKeyPressed", 		"space"],
 		["when this sprite clicked",			"h", 5, "whenClicked"],
 		["when backdrop switches to %m.backdrop", "h", 5, "whenSceneStarts", 	"backdrop1"],
+<<<<<<< HEAD
 		["when %b is true",						"h", 5, "whenGeneric"],
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		["--"],
 		["when %m.triggerSensor > %n",			"h", 5, "whenSensorGreaterThan", "loudness", 10],
 		["--"],
@@ -322,7 +328,10 @@ public class Specs {
 		["%n - %n",								"r", 8, "-",					"", ""],
 		["%n * %n",								"r", 8, "*",					"", ""],
 		["%n / %n",								"r", 8, "/",					"", ""],
+<<<<<<< HEAD
 		["%n ^ %n",								"r", 8, "^",					"", ""],
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		["-"],
 		["pick random %n to %n",		"r", 8, "randomFrom:to:",		1, 10],
 		["-"],
@@ -342,9 +351,12 @@ public class Specs {
 		["round %n",							"r", 8, "rounded", 				""],
 		["-"],
 		["%m.mathOp of %n",						"r", 8, "computeFunction:of:",	"sqrt", 9],
+<<<<<<< HEAD
 		["-"],
 		["true",								"b", 8, "true"],
 		["false",								"b", 8, "false"],
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 
 		// variables
 		["set %m.var to %s",								" ", 9, SET_VAR],
@@ -381,6 +393,7 @@ public class Specs {
 		["forever if %b",						"cf",98, "doForeverIf"],
 
 		// testing and experimental control prims
+<<<<<<< HEAD
 		//["noop",								"r", 99, "COUNT"],
 		["--"],
 		["counter",								"r", 6, "COUNT"],
@@ -389,6 +402,15 @@ public class Specs {
 		["for each %m.var in %n",				"c", 6, "doForLoop", "v", 10],
 		["while %b",							"c", 6, "doWhile"],
 		["all at once",							"c", 6, "warpSpeed"],
+=======
+		["noop",								"r", 99, "COUNT"],
+		["counter",								"r", 99, "COUNT"],
+		["clear counter",						" ", 99, "CLR_COUNT"],
+		["incr counter",						" ", 99, "INCR_COUNT"],
+		["for each %m.varName in %s",			"c", 99, "doForLoop", "v", 10],
+		["while %b",							"c", 99, "doWhile"],
+		["all at once",							"c", 99, "warpSpeed"],
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 
 		// stage motion (scrolling)
 		["scroll right %n",						" ", 99, "scrollRight",		10],

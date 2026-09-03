@@ -101,7 +101,10 @@ public class BlockMenus implements DragClient {
 		if (menuName == 'var') menuHandler.varMenu(evt);
 		if (menuName == 'videoMotionType') menuHandler.videoMotionTypeMenu(evt);
 		if (menuName == 'videoState') menuHandler.videoStateMenu(evt);
+<<<<<<< HEAD
 		if (menuName == 'boolean') menuHandler.booleanMenu(evt);
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 	}
 
 	public static function strings():Array {
@@ -129,7 +132,11 @@ public class BlockMenus implements DragClient {
 			handler.motorDirectionMenu(evt);
 			handler.procMenu(evt);
 			handler.rotationStyleMenu(evt);
+<<<<<<< HEAD
 			handler.scrollAlignMenu(evt);
+=======
+//			handler.scrollAlignMenu(evt);
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 			handler.sensorMenu(evt);
 			handler.soundMenu(evt);
 			handler.spriteMenu(evt, false, false, false, true, false);
@@ -144,7 +151,10 @@ public class BlockMenus implements DragClient {
 			handler.varMenu(evt);
 			handler.videoMotionTypeMenu(evt);
 			handler.videoStateMenu(evt);
+<<<<<<< HEAD
 			handler.booleanMenu(evt);
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		}
 		return [
 			'up arrow', 'down arrow', 'right arrow', 'left arrow', 'space', 'any',
@@ -852,6 +862,7 @@ public class BlockMenus implements DragClient {
 		showMenu(m);
 	}
 
+<<<<<<< HEAD
 	private function booleanMenu(evt:MouseEvent):void {
 		var m:Menu = new Menu(setBlockArg, 'bool');
 		m.addItem('true');
@@ -861,4 +872,6 @@ public class BlockMenus implements DragClient {
 		showMenu(m);
 	}
 
+=======
+>>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 }}
