@@ -476,10 +476,7 @@ public class Interpreter {
 		primTable["whenKeyPressed"]		= primNoop;
 		primTable["whenClicked"]		= primNoop;
 		primTable["whenSceneStarts"]	= primNoop;
-<<<<<<< HEAD
 		primTable["whenGeneric"]		= primNoop;
-=======
->>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		primTable["wait:elapsed:from:"]	= primWait;
 		primTable["doForever"]			= function(b:*):* { startCmdList(b.subStack1, true); };
 		primTable["doRepeat"]			= primRepeat;

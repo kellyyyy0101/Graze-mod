@@ -14,12 +14,8 @@ repositories {
     }
     ivy {
         name 'Player Globals'
-<<<<<<< HEAD
         ivyPattern 'https://mrcomputer1.github.io/scratch-modding/resources/playerglobal-ivy/[module][revision].[ext]'
 		artifactPattern 'https://github.com/nexussays/playerglobal/raw/refs/heads/master/11.6/playerglobal.swc'
-=======
-        artifactPattern 'http://fpdownload.macromedia.com/get/flashplayer/installers/archive/[module]/[module][revision].[ext]'
->>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
     }
 }
 
@@ -48,11 +44,7 @@ println "Commit ID for scratch-flash is: ${scratchFlashCommitID}"
 
 dependencies {
     flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.15.0', ext: 'zip'
-<<<<<<< HEAD
-    external group: 'macromedia.com', name: 'playerglobal', version: playerVersion, ext: 'swc'
-=======
     external group: 'macromedia.com', name: 'playerglobal', version: playerVersion.replace('.', '_'), ext: 'swc'
->>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
     merged files(
             "${commonDir}/libs/as3corelib.swc",
             "${commonDir}/libs/blooddy_crypto.swc",
@@ -77,8 +69,4 @@ additionalCompilerOptions += config.get('additionalCompilerOptions')
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.5'
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0

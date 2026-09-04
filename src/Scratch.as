@@ -89,11 +89,7 @@ public class Scratch extends Sprite {
 	public var isArmCPU:Boolean;
 	public var jsEnabled:Boolean = false; // true when the SWF can talk to the webpage
 	public var ignoreResize:Boolean = false; // If true, temporarily ignore resize events.
-<<<<<<< HEAD
 	public var isExtensionDevMode:Boolean = true; // If true, run in extension development mode (as on ScratchX)
-=======
-	public var isExtensionDevMode:Boolean = false; // If true, run in extension development mode (as on ScratchX)
->>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 	public var isMicroworld:Boolean = false;
 
 	public var presentationScale:Number;
@@ -170,11 +166,7 @@ public class Scratch extends Sprite {
 		isOffline = !URLUtil.isHttpURL(loaderInfo.url);
 		hostProtocol = URLUtil.getProtocol(loaderInfo.url);
 
-<<<<<<< HEAD
 		//isExtensionDevMode = (loaderInfo.parameters['extensionDevMode'] == 'true');
-=======
-		isExtensionDevMode = (loaderInfo.parameters['extensionDevMode'] == 'true');
->>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		isMicroworld = (loaderInfo.parameters['microworldMode'] == 'true');
 
 		checkFlashVersion();

@@ -678,7 +678,6 @@ public class ScratchRuntime {
 				}
 				activeHats.push(hat);
 			}
-<<<<<<< HEAD
 		} else if ('whenGeneric' == hat.op) {
 			if(interp.boolarg(hat, 0)) {
 				var boolState:Boolean //state of boolean
@@ -694,8 +693,6 @@ public class ScratchRuntime {
 				
 				activeHats.push(hat);
 			}
-=======
->>>>>>> 2e4a402ceb205a042887f54b26eebe1c2e6da6c0
 		} else if (app.jsEnabled) {
 			var unpackedOp:Array = ExtensionManager.unpackExtensionAndOp(hat.op);
 			var extName:String = unpackedOp[0];
