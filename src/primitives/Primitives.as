@@ -82,6 +82,10 @@ public class Primitives {
 		primTable["INCR_COUNT"]			= function(b:*):* { counter++ };
 		primTable["CLR_COUNT"]			= function(b:*):* { counter = 0 };
 
+		primTable["booleanPredicate"]		= primBoolean;
+
+		primTable["newlinechar"]		= function(b:*):* { return "\n" }; 
+
 		new LooksPrims(app, interp).addPrimsTo(primTable);
 		new MotionAndPenPrims(app, interp).addPrimsTo(primTable);
 		new SoundPrims(app, interp).addPrimsTo(primTable);
@@ -212,4 +216,26 @@ public class Primitives {
 		app.runtime.cloneCount--;
 	}
 
+	private function primBoolean(b:Block):Boolean 
+	{
+		/*if (interp.arg(b,0) == 0){
+			return false;
+		}else if(interp.arg(b,0) == false){
+			return false;
+		}else if(interp.arg(b,0) == ""){
+			return false;
+		}else if(interp.arg(b,0) == null){
+			return false;
+		}else if(interp.arg(b,0) == -0){
+			return false;
+		}else{
+			return true
+		}*/
+		return !!interp.arg(b, 0);
+	}
+
+	private function primShowText(b:Block):void
+	{
+		
+	}
 }}

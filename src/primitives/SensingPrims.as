@@ -72,6 +72,9 @@ public class SensingPrims {
 		primTable['hideVariable:']		= primHideWatcher;
 		primTable['showList:']			= primShowListWatcher;
 		primTable['hideList:']			= primHideListWatcher;
+
+		primTable['setDragUndrag']		= primSetUndrag
+		primTable['setDragDrag']		= primSetDrag
 	}
 
 	// TODO: move to stage
@@ -305,6 +308,18 @@ public class SensingPrims {
 		var mSecsSinceEpoch:Number = now.time - epoch.time;
 		mSecsSinceEpoch += ((now.timezoneOffset - dstAdjust) * 60 * 1000); // adjust to UTC (GMT)
 		return mSecsSinceEpoch / millisecondsPerDay;
+	}
+
+	private function primSetUndrag(b:Block):void {
+		//var spr:ScratchSprite = app.viewedObj() as ScratchSprite;
+		var spr:ScratchSprite = interp.targetSprite();
+		spr.isDraggable = false
+	}
+
+	private function primSetDrag(b:Block):void {
+		//var spr:ScratchSprite = app.viewedObj() as ScratchSprite;
+		var spr:ScratchSprite = interp.targetSprite();
+		spr.isDraggable = true
 	}
 
 }}

@@ -97,8 +97,10 @@ public class PaletteBuilder {
 				var block:Block = new Block(label, spec[1], blockColor, spec[3], defaultArgs);
 				var showCheckbox:Boolean = isCheckboxReporter(spec[3]);
 				if (showCheckbox) addReporterCheckbox(block);
+				if (!(category == 13 && app.experimentEnabled)){
 				addItem(block, showCheckbox);
 				cmdCount++;
+				}
 			} else {
 				if ((spec.length == 1) && (cmdCount > 0)) nextY += 10 * spec[0].length; // add some space
 				cmdCount = 0;

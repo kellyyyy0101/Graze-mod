@@ -57,6 +57,8 @@ public class LooksPrims {
 		primTable['think:duration:elapsed:from:']	= function(b:*):* { showBubbleAndWait(b, 'think') };
 		primTable['think:']							= function(b:*):* { showBubble(b, 'think') };
 
+		primTable["printText"]						= function(b:*):* { showBubble(b, 'text')}
+
 		primTable['changeGraphicEffect:by:'] = primChangeEffect;
 		primTable['setGraphicEffect:to:']	= primSetEffect;
 		primTable['filterReset']			= primClearEffects;
@@ -67,9 +69,10 @@ public class LooksPrims {
 
 		primTable['show']					= primShow;
 		primTable['hide']					= primHide;
-//		primTable['hideAll']				= primHideAll;
+		primTable['hideAll']				= primHideAll;
 
 		primTable['comeToFront']			= primGoFront;
+		primTable['comeToBack']				= primGoBackLayer;
 		primTable['goBackByLayers:']		= primGoBack;
 
 		primTable['setVideoState']			= primSetVideoState;
@@ -323,5 +326,12 @@ public class LooksPrims {
 	private function primScrollUp(b:Block):void {
 		if (!interp.targetObj().isStage) return;
 		app.stagePane.scrollUp(interp.numarg(b, 0));
+	}
+
+	private function primGoBackLayer(b:Block):void {
+		var s:ScratchSprite = interp.targetSprite();
+		if ((s == null) || (s.parent == null)) return;
+		s.parent.setChildIndex(s, s.parent.getChildIndex(s) - 10000);
+		if (s.visible) interp.redraw();
 	}
 }}

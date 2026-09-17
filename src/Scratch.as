@@ -136,6 +136,8 @@ public class Scratch extends Sprite {
 
 	public var logger:Log = new Log(16);
 
+	public var experimentEnabled:Boolean = true;
+
 	public function Scratch() {
 		SVGTool.setStage(stage);
 		loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, uncaughtErrorHandler);
@@ -1102,6 +1104,14 @@ public class Scratch extends Sprite {
 				d.showOnStage(app.stage);
 			});
 		}
+		
+	}
+
+	public function enableExperimentalBlocks():void {
+		if (experimentEnabled == true){
+			//dialogBox.notify('WARNING', "Experimental blocks can be found in the experimental category. \n EXPERIMENTS ARE PRONE TO BUGS AND UNFINISHED.\n THEY MIGHT BE ADDED IN A FUTURE UPDATE")
+		}
+		experimentEnabled = !experimentEnabled
 	}
 
 	public function showEditMenu(b:*):void {
@@ -1111,8 +1121,11 @@ public class Scratch extends Sprite {
 		m.addItem('Small stage layout', toggleSmallStage, true, stageIsContracted);
 		m.addItem('Turbo mode', toggleTurboMode, true, interp.turboMode);
 		addEditMenuItems(b, m);
+		m.addLine();
+		m.addItem('Enable/Unenable Experiments', enableExperimentalBlocks);
 		var p:Point = b.localToGlobal(new Point(0, 0));
 		m.showOnStage(stage, b.x, topBarPart.bottom() - 1);
+		
 	}
 
 	protected function addEditMenuItems(b:*, m:Menu):void {

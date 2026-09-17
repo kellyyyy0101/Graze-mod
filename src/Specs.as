@@ -72,6 +72,7 @@ public class Specs {
 		[10, "More Blocks",	procedureColor],
 		[11, "Parameter",	parameterColor],
 		[12, "List",		listColor],
+		[13, "Experimental", 0x4b90b8],
 		[20, "Extension",	extensionsColor],
 	];
 
@@ -157,6 +158,7 @@ public class Specs {
 		["set size to %n%",						" ", 2, "setSizeTo:", 				100],
 		["-"],
 		["go to front",							" ", 2, "comeToFront"],
+		//["go to back",							" ", 2, "comeToBack"],
 		["go back %n layers",					" ", 2, "goBackByLayers:", 			1],
 		["-"],
 		["costume #",							"r", 2, "costumeIndex"],
@@ -291,6 +293,9 @@ public class Specs {
 		["current %m.timeAndDate", 				"r", 7, "timeAndDate",			"minute"],
 		["days since 2000", 					"r", 7, "timestamp"],
 		["username",							"r", 7, "getUserName"],
+		["-"],
+		["set drag mode undraggable",				" ", 7, "setDragUndrag"],
+		["set drag mode draggable",			" ", 7, "setDragDrag"],
 
 		// stage sensing
 		["ask %s and wait",						" ", 107, "doAsk", 				"What's your name?"],
@@ -344,6 +349,9 @@ public class Specs {
 		["-"],
 		["true",								"b", 8, "true"],
 		["false",								"b", 8, "false"],
+		["boolean %s",							"b", 8, "booleanPredicate"],
+		["-"],
+		["newline",								"r", 8, "newlinechar"],
 
 		// variables
 		["set %m.var to %s",								" ", 9, SET_VAR],
@@ -381,7 +389,7 @@ public class Specs {
 
 		// testing and experimental control prims
 		//["noop",								"r", 99, "COUNT"],
-		["--"],
+		["-"],
 		["counter",								"r", 6, "COUNT"],
 		["clear counter",						" ", 6, "CLR_COUNT"],
 		["incr counter",						" ", 6, "INCR_COUNT"],
@@ -397,8 +405,10 @@ public class Specs {
 		["y scroll",							"r", 99, "yScroll"],
 
 		// other obsolete blocks from alpha/beta
-		["hide all sprites",					" ", 99, "hideAll"],
+		["hide all sprites",					" ", 102, "hideAll"],
 		["user id",								"r", 99, "getUserId"],
+
+		["set text %s",							" ", 13, "printText"],
 
 	];
 }}

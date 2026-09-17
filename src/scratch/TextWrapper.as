@@ -1,38 +1,18 @@
-/*
- * Scratch Project Editor and Player
- * Copyright (C) 2014 Massachusetts Institute of Technology
- *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; either version 2
- * of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- */
 
 package scratch {
 	import flash.display.*;
 	import flash.text.*;
 
-public class TalkBubble extends Sprite {
+public class TextWrapper extends Sprite {
 
 	public var pointsLeft:Boolean;
 	public var style:String; // 'say' or 'ask' or 'result'
 
 	private var type:String; // 'say' or 'think'
-	private var shape:Shape;
 	private var text:TextField;
 	private var source:Object;
-	private static var spriteTextFormat:TextFormat = new TextFormat(CSS.font, 18, 0, true, null, null, null, null, TextFormatAlign.CENTER);
 	private static var textFormat:TextFormat = new TextFormat(CSS.font, 14, 0, true, null, null, null, null, TextFormatAlign.CENTER);
-	private static var resultFormat:TextFormat = new TextFormat(CSS.font, 12, CSS.textColor, null, null, null, null, null, TextFormatAlign.CENTER);
+	//private static var resultFormat:TextFormat = new TextFormat(CSS.font, 12, CSS.textColor, null, null, null, null, null, TextFormatAlign.CENTER);
 	private var outlineColor:int = 0xA0A0A0;
 	private var radius:int = 8;  // corner radius
 	private var padding:int = 5;
@@ -44,7 +24,7 @@ public class TalkBubble extends Sprite {
 	private var pDropX:int = 8;
 	private var lineWidth:Number = 3;
 
-	public function TalkBubble(s:String, type:String, style:String, source:Object) {
+	public function Text(s:String, type:String, style:String, source:Object) {
 		this.type = type;
 		this.style = style;
 		this.source = source;
@@ -63,20 +43,12 @@ public class TalkBubble extends Sprite {
 		}
 		pointsLeft = true;
 		shape = new Shape();
-		if(!(this.type == 'text')) addChild(shape);
-		text = makeText(this.type);
+		//addChild(shape);
+		text = makeText();
 		addChild(text);
 		setText(s);
 	}
 
-	public function setDirection(dir:String):void {
-		// set direction of balloon tail to 'left' or 'right'
-		// and redraw balloon if necessary
-		var newValue:Boolean = (dir == 'left');
-		if (pointsLeft == newValue) return;
-		pointsLeft = newValue;
-		setWidthHeight(text.width + padding * 2, text.height + padding * 2);
-	}
 
 	public function getText():String { return text.text }
 
@@ -99,28 +71,19 @@ public class TalkBubble extends Sprite {
 		else drawTalk(w, h);
 	}
 
-	private function makeText(type:String):TextField {
-		this.type = type;
+	private function makeText():TextField {
 		var result:TextField = new TextField();
 		result.autoSize = TextFieldAutoSize.LEFT;
+		result.defaultTextFormat = style == 'result' ? resultFormat : textFormat;
 		result.selectable = false;  // not selectable
 		result.type = 'dynamic';  // not editable
-		if (!(this.type == 'text'))
-		{
-			result.wordWrap = true;
-			result.defaultTextFormat = style == 'result' ? resultFormat : textFormat;
-			result.x = padding;
-			result.y = padding;
-		}else{
-			result.wordWrap = false;
-			result.defaultTextFormat = spriteTextFormat;
-			result.x = 0
-			result.y = 0
-		}
+		result.wordWrap = true;
+		result.x = padding;
+		result.y = padding;
 		return result;
 	}
 
-	private function drawTalk(w:int, h:int):void {
+	/*private function drawTalk(w:int, h:int):void {
 		var insetW:int = w - radius;
 		var insetH:int = h - radius;
 		// pointer geometry:
@@ -194,6 +157,6 @@ public class TalkBubble extends Sprite {
 		var cy:Number = midY - (roundness * (x - lastXY[0]));
 		shape.graphics.curveTo(cx, cy, x, y);
 		lastXY = [x, y];
-	}
+	}*/
 
 }}
