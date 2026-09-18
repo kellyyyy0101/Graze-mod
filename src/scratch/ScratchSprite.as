@@ -44,6 +44,8 @@ import util.*;
 
 import watchers.ListWatcher;
 
+import scratch.*;
+
 public class ScratchSprite extends ScratchObj {
 
 	public var scratchX:Number;
@@ -627,6 +629,28 @@ public class ScratchSprite extends ScratchObj {
 			bubble.y = stageH - bubble.height;
 		}
 	}
+
+	public function setBubbleSize(formatSize:Number):void
+	{
+		TalkBubble.textSize = formatSize;
+	}
+
+	public function setBubbleColour(formatColour:uint):void
+	{
+		TalkBubble.textColour = formatColour;
+	}
+
+	public function setBubbleBold(formatBold:Boolean):void
+	{
+		TalkBubble.textBold = formatBold;
+	}
+
+	public function setBubbleItalic(formatItalic:Boolean):void
+	{
+		TalkBubble.textItalic = formatItalic;
+	}
+
+
 
 	private function bubbleRect():Rectangle {
 		// Answer a rectangle to be used for position a talk/think bubble, based on

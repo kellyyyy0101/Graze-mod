@@ -352,6 +352,8 @@ public class Specs {
 		["boolean %s",							"b", 8, "booleanPredicate"],
 		["-"],
 		["newline",								"r", 8, "newlinechar"],
+		["-"],
+		["colour %c",							"r", 8, "getColourInput"],
 
 		// variables
 		["set %m.var to %s",								" ", 9, SET_VAR],
@@ -409,6 +411,11 @@ public class Specs {
 		["user id",								"r", 99, "getUserId"],
 
 		["set text %s",							" ", 13, "printText"],
+		["set text size to %n",					" ", 13, "setTextSize"],
+		["set text italic to %b",				" ", 13, "setTextItalic"],
+		["set text bold to %b",					" ", 13, "setTextBold"],
+		["set text colour to %c",				" ", 13, "setTextColour"],
+		["text size",							"r", 13, "getTextSize"],
 
 	];
 }}

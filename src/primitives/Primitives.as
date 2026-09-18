@@ -86,6 +86,8 @@ public class Primitives {
 
 		primTable["newlinechar"]		= function(b:*):* { return "\n" }; 
 
+		primTable["getColourInput"]		= function(b:*):* { return interp.arg(b, 0)};
+
 		new LooksPrims(app, interp).addPrimsTo(primTable);
 		new MotionAndPenPrims(app, interp).addPrimsTo(primTable);
 		new SoundPrims(app, interp).addPrimsTo(primTable);

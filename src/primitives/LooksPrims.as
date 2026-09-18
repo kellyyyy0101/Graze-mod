@@ -57,7 +57,12 @@ public class LooksPrims {
 		primTable['think:duration:elapsed:from:']	= function(b:*):* { showBubbleAndWait(b, 'think') };
 		primTable['think:']							= function(b:*):* { showBubble(b, 'think') };
 
-		primTable["printText"]						= function(b:*):* { showBubble(b, 'text')}
+		primTable["printText"]						= function(b:*):* { showBubble(b, 'text')};
+		primTable["setTextSize"]					= function(b:*):* { setTextFormatSize(interp.numarg(b, 0))};
+		primTable["setTextItalic"]					= function(b:*):* { setTextFormatItalic(interp.boolarg(b, 0))};
+		primTable["setTextBold"]					= function(b:*):* { setTextFormatBold(interp.boolarg(b, 0))};
+		primTable["setTextColour"]					= function(b:*):* { setTextFormatColour(interp.arg(b, 0))};
+		primTable["getTextSize"]					= function(b:*):* { return TalkBubble.textSize};
 
 		primTable['changeGraphicEffect:by:'] = primChangeEffect;
 		primTable['setGraphicEffect:to:']	= primSetEffect;
@@ -187,6 +192,26 @@ public class LooksPrims {
 		}
 		s.showBubble(text, type, b);
 		if (s.visible) interp.redraw();
+	}
+
+	private function setTextFormatSize(textFormatSize:Number = 14):void{
+		var s:ScratchSprite = interp.targetSprite();
+		s.setBubbleSize(textFormatSize);
+	}
+
+	private function setTextFormatColour(textFormatColour:uint = 0):void{
+		var s:ScratchSprite = interp.targetSprite();
+		s.setBubbleColour(textFormatColour);
+	}
+
+	private function setTextFormatBold(textFormatBold:Boolean = false):void{
+		var s:ScratchSprite = interp.targetSprite();
+		s.setBubbleBold(textFormatBold);
+	}
+
+	private function setTextFormatItalic(textFormatItalic:Boolean = false):void{
+		var s:ScratchSprite = interp.targetSprite();
+		s.setBubbleItalic(textFormatItalic);
 	}
 
 	private function primChangeEffect(b:Block):void {

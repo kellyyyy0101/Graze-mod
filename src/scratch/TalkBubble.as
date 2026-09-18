@@ -30,7 +30,7 @@ public class TalkBubble extends Sprite {
 	private var shape:Shape;
 	private var text:TextField;
 	private var source:Object;
-	private static var spriteTextFormat:TextFormat = new TextFormat(CSS.font, 18, 0, true, null, null, null, null, TextFormatAlign.CENTER);
+	private static var spriteTextFormat:TextFormat = new TextFormat();
 	private static var textFormat:TextFormat = new TextFormat(CSS.font, 14, 0, true, null, null, null, null, TextFormatAlign.CENTER);
 	private static var resultFormat:TextFormat = new TextFormat(CSS.font, 12, CSS.textColor, null, null, null, null, null, TextFormatAlign.CENTER);
 	private var outlineColor:int = 0xA0A0A0;
@@ -43,11 +43,23 @@ public class TalkBubble extends Sprite {
 	private var pDrop:int = 17;
 	private var pDropX:int = 8;
 	private var lineWidth:Number = 3;
+	public static var textSize:Number = 14;
+	public static var textColour:uint = 0;
+	public static var textBold:Boolean = false;
+	public static var textItalic:Boolean = false;
+	
+	
 
 	public function TalkBubble(s:String, type:String, style:String, source:Object) {
 		this.type = type;
 		this.style = style;
 		this.source = source;
+		spriteTextFormat.font = CSS.font;
+		spriteTextFormat.size = textSize;
+		spriteTextFormat.color = textColour;
+		spriteTextFormat.bold = textBold;
+		spriteTextFormat.italic = textItalic;
+		spriteTextFormat.align = TextFormatAlign.CENTER
 		if (style == 'ask') {
 			outlineColor = 0x4AADDE;
 		} else if (style == 'result') {
